@@ -12,5 +12,6 @@ target_include_directories(${tgt}
   PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
     ${PrjSrc}
+    ${PrjSrc}/std23
 )
 target_link_libraries(${tgt} PUBLIC GTest::gtest)
