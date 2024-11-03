@@ -159,8 +159,8 @@ set( DOXYGEN_DOT_TRANSPARENT YES )
 
 #-doxygen_add_docs( doxygen ${RPP_PROJECT_SOURCE_DIR} )
 doxygen_add_docs(
-    doc
-    ${PROJECT_SOURCE_DIR}
+    doxygen
+    ${PrjSrc}
     COMMENT "Generate html pages"
 )
 
