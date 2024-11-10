@@ -15,7 +15,7 @@ endif()
 
 
 
-# Commonly used inc/lib/src locations by default
+# Commonly used locations by default
 set(_opt /opt)
 set(_opt_MP ${_opt}/MP)
 set(_opt_MP_ext ${_opt_MP}/ext)
@@ -33,8 +33,19 @@ message(STATUS "CMAKE_HOST_SYSTEM_VERSION: ${CMAKE_HOST_SYSTEM_VERSION}")
 
 if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux") 
   message(STATUS "Linux detected.")
+
+  if(${CMAKE_HOST_SYSTEM_VERSION} MATCHES "WSL")
+    #TODO
+  else()  
+    #TODO
+  endif()
+
+
   include_directories(${_opt_local}/include)
   link_directories(${_opt_local}/lib)
+
+  # Provide hints to package locations
+  set(GTest_DIR ${_opt_local}/lib/cmake/GTest)
 
 elseif(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
   message(STATUS "Windows detected.")
@@ -42,6 +53,7 @@ elseif(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
   set(_opt C:/opt)
   set(_opt_MP ${_opt}/MP)
   set(_opt_MP_ext ${_opt_MP}/ext)
+  set(_opt_local ${_opt}/local)
 
   # Provide hints to package locations
   set(GTest_DIR ${_opt_local}/gtest/lib/cmake/GTest)
