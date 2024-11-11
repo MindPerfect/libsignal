@@ -81,7 +81,7 @@
       "name": "base_lx",
       "description": "Base Linux",
       "hidden": true,
-      "generator": "Unix Makefiles",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/bld_${presetName}",
       "installDir": "${sourceDir}/inst_${presetName}",
       "condition": {
