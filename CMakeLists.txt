@@ -37,7 +37,7 @@ if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux")
   if(${CMAKE_HOST_SYSTEM_VERSION} MATCHES "WSL")
     #TODO
   else()  
-    #TODO
+    set(GTest_DIR ${_opt_local}/lib/cmake/GTest)
   endif()
 
 
