@@ -14,4 +14,6 @@ target_include_directories(${tgt}
     ${PrjSrc}
     ${PrjSrc}/std23
 )
-target_link_libraries(${tgt} PUBLIC GTest::gtest)
+target_link_libraries(${tgt} PUBLIC absl::base absl::log absl::strings GTest::gtest)
+
+

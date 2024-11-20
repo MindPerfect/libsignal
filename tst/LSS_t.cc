@@ -13,6 +13,7 @@
 // Std includes
 // Google Test
 #include <gtest/gtest.h>
+#include <absl/log/log.h>
 
 using namespace std;
 using namespace lss;
@@ -33,6 +34,10 @@ TEST(lss_lock, Base)
 
 	sg.set_lock(false);
 	ASSERT_TRUE(sg.is_locked()==false); // Signal should be unlocked.
+	
+	sg.set_lock(true);
+	EXPECT_TRUE(sg.is_locked()==true) << "Custom message: Checking if value is locked."; 
+	//LOG(INFO) << "Custom message: Checking if value is locked.";
 }
 
   

@@ -17,6 +17,8 @@ set_target_properties(${tgt} PROPERTIES LINKER_LANGUAGE CXX)
 
 #target_include_directories(${tgt} PUBLIC ${sql3_inc})
 #target_link_libraries(${tgt} PUBLIC spdlog::spdlog TBB::tbb sql3lib CLI11::CLI11 absl::strings absl::str_format absl::time absl::time_zone absl::civil_time)
+target_link_libraries(${tgt} absl::base absl::log absl::strings)
+
 
 install(
   TARGETS lss

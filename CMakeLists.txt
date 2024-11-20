@@ -133,7 +133,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmk")
 #
 # Google Libraries
 find_package(GTest CONFIG REQUIRED) # Gtest/mock
-#-find_package(absl CONFIG REQUIRED) # Abseil
+find_package(absl CONFIG REQUIRED) # Abseil
 #-find_package(benchmark CONFIG REQUIRED) # Benchmark
 # Third party libraries
 #-find_package(TBB CONFIG REQUIRED) # Threading Building Blocks
