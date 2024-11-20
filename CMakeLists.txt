@@ -58,7 +58,7 @@ elseif(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
   # Provide hints to package locations
   set(GTest_DIR ${_opt_local}/gtest/lib/cmake/GTest)
   #-set(spdlog_DIR ${_opt_local}/spdlog/lib/cmake/spdlog)
-  #-set(absl_DIR ${_opt_local}/absl/lib/cmake/absl)
+  set(absl_DIR ${_opt_local}/abseil/lib/cmake/absl)
   #-set(TBB_DIR ${_opt_local}/oneapi-tbb-2021.10.0/lib/cmake/tbb)
   #-set(CLI11_DIR ${_opt_local}/CLI11/share/cmake/CLI11)
   #gperftools
