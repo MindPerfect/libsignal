@@ -38,6 +38,8 @@ if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux")
     #TODO
   else()  
     set(GTest_DIR ${_opt_local}/lib/cmake/GTest)
+    set(absl_DIR ${_opt_local}/abseil/lib/cmake/absl)
+    set(benchmark_DIR ${_opt_local}/benchmark/lib/cmake/benchmark)
   endif()
 
 
@@ -63,6 +65,7 @@ elseif(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
   #-set(CLI11_DIR ${_opt_local}/CLI11/share/cmake/CLI11)
   #gperftools
   #benchmark
+  set(benchmark_DIR ${_opt_local}/benchmark/lib/cmake/benchmark)
 
 elseif(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Darwin") 
   message(FATAL_ERROR "MacOS is not supported yet")  
