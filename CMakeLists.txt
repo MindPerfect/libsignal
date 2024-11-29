@@ -104,6 +104,34 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   # HEAPCHECK=normal ./base_test
   # CPUPROFILE=tst.prof ./base_test
 
+  # add variant optoins
+  option(COV "Coverage" OFF)
+  option(PROF "Profiler" OFF)
+  option(ASAN "Sanitizer-Address" OFF)
+  option(TSAN "Sanitizer-Thread" OFF)
+
+  if(COV)
+  add_compile_options(-O0 --coverage)
+  add_link_options(--coverage)
+  endif()
+
+  if(PROF)
+  add_compile_options(-pg)
+  add_link_options(-pg)
+  endif()
+
+  if(ASAN)
+  add_compile_options(-fsanitize=address)
+  add_link_options(-fsanitize=address)
+  endif()
+
+  if(TSAN)
+  add_compile_options(-fsanitize=thread)
+  add_link_options(-fsanitize=thread)
+  endif()
+
+
+
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
   # using Visual Studio C++
   # warning level 4 and all warnings as errors
